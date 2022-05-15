@@ -39,7 +39,7 @@ if __name__ == "__main__" :
     )
     app = Client(
         "renamer",
-        bot_token=TOKEN,
+        bot_token=BOT_TOKEN,
         api_id=API_ID,
         api_hash=API_HASH,
         plugins=plugins
