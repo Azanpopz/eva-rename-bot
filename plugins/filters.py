@@ -11,7 +11,7 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, 
 from pyrogram.errors import ButtonDataInvalid, FloodWait
 
 from database import Database # pylint: disable=import-error
-from bot.bot import Bot # pylint: disable=import-error
+from plugins.bot import Bot # pylint: disable=import-error
 
 
 FIND = {}
