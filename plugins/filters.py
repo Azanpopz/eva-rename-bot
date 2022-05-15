@@ -1123,9 +1123,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
     except: pass
 
 
-async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
-     
-    else:
+@Client.on_message((filters.private) & filters.text & ~filters.edited & filters.incoming)
+async def give_filter(client, message):
+    await auto_filter(client, message)
+    
         
     
     pre = 'filep' if settings['file_secure'] else 'file'
