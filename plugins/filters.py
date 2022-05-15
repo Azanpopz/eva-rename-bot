@@ -492,7 +492,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(f"try", url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}"),
+                            InlineKeyboardButton(f"try", url="https://t.me/{temp.U_NAME}?start={ident}_{file_id}"),
                                                                        
                             InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
                         ],
