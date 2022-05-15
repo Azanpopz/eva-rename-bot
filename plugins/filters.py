@@ -1123,9 +1123,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
     except: pass
 
 
+
 @Client.on_message((filters.private) & filters.text & ~filters.edited & filters.incoming)
-async def give_filter(client, message):
-    await auto_filter(client, message)
+
+async def auto_filter(client, msg: pyrogram.types.Message)
+
     
         
     
