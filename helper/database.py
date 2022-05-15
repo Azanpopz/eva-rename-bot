@@ -1,10 +1,10 @@
 import pymongo 
 import os
 
-DATA_NAME = os.environ.get("DATA_NAME","")
-DATA_URI = os.environ.get("DATA_URI","")
-mongo = pymongo.MongoClient(DATA_URI)
-db = mongo[DATA_NAME]
+DB_NAME = os.environ.get("DB_NAME","")
+DB_URL = os.environ.get("DB_URL","")
+mongo = pymongo.MongoClient(DB_URL)
+db = mongo[DB_NAME]
 dbcol = db["user"]
 
 def insert(chat_id):
