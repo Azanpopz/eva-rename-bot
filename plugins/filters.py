@@ -1126,7 +1126,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
 @Client.on_message((filters.private) & filters.text & ~filters.edited & filters.incoming)
 
-async def auto_filter(client, msg: pyrogram.types.Message)
+async def auto_filter(client, msg: pyrogram.types.Message):
 
     
         
