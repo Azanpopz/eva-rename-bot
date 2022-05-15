@@ -1131,9 +1131,7 @@ async def auto_filter(client, msg: pyrogram.types.Message):
     
         
     
-    pre = 'filep' if settings['file_secure'] else 'file'
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
-
+    
     if settings["button"]:
         btn = [
             [
