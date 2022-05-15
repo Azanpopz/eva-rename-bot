@@ -22,6 +22,18 @@
             "description": "Your bot token.",
             "required": true
         },
+        "ADMIN": {
+            "description":"Add Your User ID"
+        },
+        "DB_URL": {
+            "description": "Your Mongo DB URL Obtained From mongodb.com",
+            "value": ""
+        },
+        "DB_NAME":{ 
+               "description":"Your Mongo DB Database Name ",
+                "value": "my",
+                "required": false
+        }, 
         "API_ID": {
             "description": "Get this value from https://my.telegram.org",
             "required": true
