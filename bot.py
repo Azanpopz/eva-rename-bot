@@ -34,7 +34,7 @@ from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from util import Media
 from infos import SESSION, API_ID, API_HASH, BOT_TOKEN
-import pyromod.listen
+
 
 class Bot(Client):
 
