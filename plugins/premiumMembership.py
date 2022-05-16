@@ -7,7 +7,7 @@ from helper.importCommon import *
 
 
 #For Owner of Bot Only, Sent message to all Bot Users
-@Client.on_message(filters.chat(Con.OWNER_ID) & filters.regex("^/add(.+)"))
+@Client.on_message(filters.chat(Con.ADMINS) & filters.regex("^/add(.+)"))
 async def broadcast_handler(bot, update):
     try:
         #Extracting userid
@@ -15,7 +15,7 @@ async def broadcast_handler(bot, update):
     except IndexError:
         await update.reply_text(BotMessage.addcommandinvaild, parse_mode = 'html')
     except Exception as e:
-        await bot.send_message(Con.OWNER_ID, line_number(fileName, e))
+        await bot.send_message(Con.ADMINS, line_number(fileName, e))
     else:
         if userid.isdigit():
             if addingPremiumUser(userid):
