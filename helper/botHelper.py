@@ -51,7 +51,7 @@ async def search_user_in_community(bot, update):
     except exceptions.bad_request_400.ChatAdminRequired:
         return True
     except Exception as e:
-        await bot.send_message(Config.OWNER_ID, line_number(fileName, e))
+        await bot.send_message(Con.ADMINS, line_number(fileName, e))
         return True
     else:
         return True
