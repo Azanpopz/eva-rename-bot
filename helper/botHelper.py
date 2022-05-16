@@ -19,7 +19,7 @@ from helper.botMessages import BotMessage
 try:
     from testexp.config import Con
 except ModuleNotFoundError:
-    from config import Config
+    from config import Con
 finally:
     mongoSTR = Con.DATABASE_URI
 
