@@ -233,7 +233,7 @@ async def channelgroupRemover(bot:Update, msg:Message):
     return
 
 # #request handler
-@Client.on_message(filters.command("ok") & filters.group & filters.regex(requestRegex + "(.*)"))
+@Client.on_message(filters.group & filters.regex(requestRegex + "ok"))
 async def requestHandler(bot:Update, msg:Message):
     groupID = str(msg.chat.id)
 
