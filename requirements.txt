@@ -91,6 +91,7 @@ pyromod
 requests
 parse-torrent-name
 
+
 async-lru==1.0.2
 dnspython==2.1.0
 pyaes==1.6.1
