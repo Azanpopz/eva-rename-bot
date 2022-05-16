@@ -59,7 +59,7 @@ requestRegex = "#[rR][eE][qQ][uU][eE][sS][tT] "
 async def startHandler(bot:Update, msg:Message):
     botInfo = await bot.get_me()
     await msg.reply_text(
-        "<b>Hi, I am Request Tracker Bot🤖.\nIf you hadn't added me in your Group & Channel then ➕add me now.\n\nHow to Use me?</b>\n\t1. Add me to your Group & CHannel.\n\t2. Make me admin in both Channel & Group.\n\t3. Give permission to Post , Edit & Delete Messages.\n\t4. Now send Group ID & Channel ID in this format <code>/add GroupID ChannelID</code>.\nNow Bot is ready to be used.",
+        "<b>Hi, I am Request Tracker Bot🤖.\nIf you hadn't added me in your Group & Channel then ➕add me now.\n\nHow to Use me?</b>\n\t1. Add me to your Group & CHannel.\n\t2. Make me admin in both Channel & Group.\n\t3. Give permission to Post , Edit & Delete Messages.\n\t4. Now send Group ID & Channel ID in this format <code>/add GroupID ChannelID</code>.\nNow Bot is ready to be used.\n\n<b>😊Join @AJPyroVerse & @AJPyroVerseGroup for getting more awesome 🤖bots like this.</b>",
         parse_mode = "html",
         reply_markup = InlineKeyboardMarkup(
             [
@@ -85,7 +85,7 @@ async def chatHandler(bot:Update, msg:Message):
     return
 
 # return channel id when message/post from channel is forwarded
-@Client.on_message(filters.forwarded & filters.private)
+@app.on_message(filters.forwarded & filters.private)
 async def forwardedHandler(bot:Update, msg:Message):
     forwardInfo = msg.forward_from_chat
     if forwardInfo.type == "channel":   # If message forwarded from channel
@@ -118,7 +118,7 @@ async def groupChannelIDHandler(bot:Update, msg:Message):
                     pass
                 else:   # If group id found in database
                     await msg.reply_text(
-                    "<b>Your Group ID already Added🤪.</b>",
+                    "<b>Your Group ID already Added.</b>",
                     parse_mode = "html"
                     )
                     break
@@ -128,14 +128,14 @@ async def groupChannelIDHandler(bot:Update, msg:Message):
                     else:
                         if document[record][0] == channelID:    #If channel id found in database
                             await msg.reply_text(
-                                "<b>Your Channel ID already Added🤪.</b>",
+                                "<b>Your Channel ID already Added.</b>",
                                 parse_mode = "html"
                             )
                             break
             else:   # If group id & channel not found in db
                 try:
                     botSelfGroup = await bot.get_chat_member(int(groupID), 'me')
-                except PeerIdInvalid:   # If given group id is invalid
+                except (PeerIdInvalid, ValueError):   # If given group id is invalid
                     await msg.reply_text(
                         "<b>😒Group ID is wrong.\n\n😊Join @AJPyroVerse & @AJPyroVerseGroup for getting more awesome 🤖bots like this.</b>",
                         parse_mode = "html"
@@ -216,9 +216,9 @@ async def channelgroupRemover(bot:Update, msg:Message):
                         )
                     else:   # If group id, channel id is not removing by one who added
                         await msg.reply_text(
-                        "<b>😒You are not the one who added this Channel ID & Group ID.</b>",
-                        parse_mode = "html"
-                    )
+                            "<b>😒You are not the one who added this Channel ID & Group ID.</b>",
+                            parse_mode = "html"
+                        )
                     break
             else:   # If group id not found in database
                 await msg.reply_text(
@@ -233,7 +233,7 @@ async def channelgroupRemover(bot:Update, msg:Message):
     return
 
 # #request handler
-@app.on_message(filters.group & filters.regex(requestRegex + "(.*)"))
+@Client.on_message(filters.group & filters.regex(requestRegex + "(.*)"))
 async def requestHandler(bot:Update, msg:Message):
     groupID = str(msg.chat.id)
 
@@ -314,7 +314,7 @@ async def requestHandler(bot:Update, msg:Message):
     return
         
 # callback buttons handler
-@app.on_callback_query()
+@Client.on_callback_query()
 async def callBackButton(bot:Update, callback_query:CallbackQuery):
     channelID = str(callback_query.message.chat.id)
 
