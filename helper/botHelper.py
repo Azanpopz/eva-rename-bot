@@ -17,11 +17,11 @@ from datetime import date
 # Importing Credentials & Required Data
 from helper.botMessages import BotMessage
 try:
-    from testexp.config import Config
+    from testexp.config import Con
 except ModuleNotFoundError:
     from config import Config
 finally:
-    mongoSTR = Config.MONGO_STR
+    mongoSTR = Con.DATABASE_URI
 
 fileName = 'botHelper'
 
