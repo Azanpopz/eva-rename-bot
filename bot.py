@@ -57,7 +57,7 @@ except FileNotFoundError:
 """Starting Bot"""
 if __name__ == "__main__" :
     # Creating download directories, if they does not exists
-    if not path.isdir(Config.DOWNLOAD_LOCATION):
+    if not path.isdir(Con.DOWNLOAD_LOCATION):
         makedirs(Con.DOWNLOAD_LOCATION)
     plugins = dict(
         root="plugins"
