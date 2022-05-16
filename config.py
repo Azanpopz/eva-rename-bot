@@ -21,7 +21,7 @@ class Con(object):
     
     API_HASH = os.environ.get("API_HASH", "") # Get this value from https://my.telegram.org/apps
     
-    OWNER_ID = int(os.environ.get("OWNER_ID", None)) # Your(owner's) telegram id
+    ADMINS = int(os.environ.get("ADMINS", None)) # Your(owner's) telegram id
     
     DATABASE_URI = os.environ.get("DATABASE_URI", "") # Get from MongoDB Atlas
 
