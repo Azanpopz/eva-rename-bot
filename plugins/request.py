@@ -233,7 +233,7 @@ async def channelgroupRemover(bot:Update, msg:Message):
     return
 
 # #request handler
-@Client.on_message(filters.group & filters.regex(requestRegex + "(.*)"))
+@app.on_message(filters.group & filters.regex(requestRegex + "(.*)"))
 async def requestHandler(bot:Update, msg:Message):
     groupID = str(msg.chat.id)
 
@@ -253,8 +253,12 @@ async def requestHandler(bot:Update, msg:Message):
             requestString = findRegexStr.group()
             contentRequested = originalMSG.split(requestString)[1]
             
-            groupIDPro = groupID.removeprefix(str(-100))
-            channelIDPro = channelID.removeprefix(str(-100))
+            try:
+                groupIDPro = groupID.removeprefix(str(-100))
+                channelIDPro = channelID.removeprefix(str(-100))
+            except AttributeError:
+                groupIDPro = groupID[4:]
+                channelIDPro = channelID[4:]
 
             # Sending request in channel
             requestMSG = await bot.send_message(
@@ -280,12 +284,8 @@ async def requestHandler(bot:Update, msg:Message):
                         ],
                         [
                             InlineKeyboardButton(
-                                "⚠️Unavailable",
+                                "⚠️Unavailable⚠️",
                                 "unavailable"
-                            ),
-                            InlineKeyboardButton(
-                                "✅Available",
-                                "available"
                             )
                         ]
                     ]
@@ -314,7 +314,7 @@ async def requestHandler(bot:Update, msg:Message):
     return
         
 # callback buttons handler
-@Client.on_callback_query()
+@app.on_callback_query()
 async def callBackButton(bot:Update, callback_query:CallbackQuery):
     channelID = str(callback_query.message.chat.id)
 
@@ -340,11 +340,6 @@ async def callBackButton(bot:Update, callback_query:CallbackQuery):
                             "This request Is Completed🥳...\nCheckout in Channel😊",
                             show_alert = True
                         )
-                    elif data == "available":
-                        return await callback_query.answer(
-                            "This request Is Completed🥳...\nCheckout in Channel😊",
-                            show_alert = True
-                        )
                     user = await bot.get_chat_member(int(channelID), callback_query.from_user.id)
                     if user.status not in ("administrator", "creator"): # If accepting, rejecting request tried to be done by neither admin nor owner
                         await callback_query.answer(
@@ -364,18 +359,17 @@ async def callBackButton(bot:Update, callback_query:CallbackQuery):
                             result = "UNAVAILABLE"
                             groupResult = "has been rejected💔 due to Unavailablity🥲."
                             button = InlineKeyboardButton("Request Rejected🚫", "rejected")
-                        elif data == "available":
-                            result = "AVAILABLE"
-                            groupResult = "is already uploaded, Please check out in channel 🙂."
-                            button = InlineKeyboardButton("Request Completed✅", "completed")
 
                         msg = callback_query.message
+                        userid = 12345678
+                        for m in msg.entities:
+                            if m.type == "text_mention":
+                                userid = m.user.id
                         originalMsg = msg.text
                         findRegexStr = search(requestRegex, originalMsg)
                         requestString = findRegexStr.group()
                         contentRequested = originalMsg.split(requestString)[1]
                         requestedBy = originalMsg.removeprefix("Request by ").split('\n\n')[0]
-                        userid = msg.entities[1].user.id
                         mentionUser = f"<a href='tg://user?id={userid}'>{requestedBy}</a>"
                         originalMsgMod = originalMsg.replace(requestedBy, mentionUser)
                         originalMsgMod = f"<s>{originalMsgMod}</s>"
@@ -408,4 +402,5 @@ async def callBackButton(bot:Update, callback_query:CallbackQuery):
 
 """Bot is Started"""
 print("Bot has been Started!!!")
+app.run()
 
