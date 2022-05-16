@@ -38,9 +38,9 @@ from os import path, makedirs, remove
 
 # Importing Credentials & Required Data
 try:
-    from testexp.config import Config
+    from testexp.config import Con
 except ModuleNotFoundError:
-    from config import Config
+    from config import Con
 
 
 '''For Displaying Errors&Warnings Better'''
@@ -58,15 +58,15 @@ except FileNotFoundError:
 if __name__ == "__main__" :
     # Creating download directories, if they does not exists
     if not path.isdir(Config.DOWNLOAD_LOCATION):
-        makedirs(Config.DOWNLOAD_LOCATION)
+        makedirs(Con.DOWNLOAD_LOCATION)
     plugins = dict(
         root="plugins"
     )
     app = Client(
         "URL_Uploader",
-        bot_token=Config.BOT_TOKEN,
-        api_id=Config.APP_ID,
-        api_hash=Config.API_HASH,
+        bot_token=Con.BOT_TOKEN,
+        api_id=Con.APP_ID,
+        api_hash=Con.API_HASH,
         plugins=plugins
     )
 
