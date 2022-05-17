@@ -14,7 +14,6 @@ from database.users_chats_db import db
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR
 from utils import temp
 
-
 from pyrogram import Client
 import os
 
@@ -33,9 +32,7 @@ if __name__ == "__main__" :
         bot_token=BOT_TOKEN,
         api_id=API_ID,
         api_hash=API_HASH,
-        plugins=plugins
-    )
-
+        
 
 
 class Bot(Client):
@@ -71,3 +68,6 @@ class Bot(Client):
         await super().stop()
         logging.info("Bot stopped. Bye.")
 
+
+app = Bot()
+app.run()
