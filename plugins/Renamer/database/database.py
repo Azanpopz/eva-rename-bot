@@ -10,7 +10,7 @@ import asyncio
 from sqlalchemy import Column, Integer, Boolean, String, ForeignKey, UniqueConstraint, func
 
 
-from ..config import Config
+from plugins.config import Config
 
 
 def start() -> scoped_session:
