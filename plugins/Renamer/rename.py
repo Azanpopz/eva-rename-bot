@@ -15,9 +15,9 @@ from ..database.database import *
 from pyrogram import Client as RenamerNs, filters
 from pyrogram.errors import PeerIdInvalid, ChannelInvalid, FloodWait
 from pyrogram.emoji import *
+from pyrogram import Client, filters
 
-
-@RenamerNs.on_message((filters.document|filters.video) & filters.private & filters.incoming)
+@Client.on_message((filters.document|filters.video) & filters.private & filters.incoming)
 async def media(c, m):
     """Checking and Processing the renaming"""
 
