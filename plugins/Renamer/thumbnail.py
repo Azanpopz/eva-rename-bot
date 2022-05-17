@@ -7,11 +7,11 @@ from ..tools.text import TEXT
 from ..database.database import *
 from pyrogram import Client as RenamerNs, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
+from pyrogram import Client, filters
 
 ################## Saving thumbnail 🖼 ##################
 
-@RenamerNs.on_message(filters.photo & filters.incoming & filters.private)
+@Client.on_message(filters.photo & filters.incoming & filters.private)
 async def save_photo(c, m):
     if Config.BANNED_USERS:
         if m.from_user.id in Config.BANNED_USERS:
@@ -34,7 +34,7 @@ async def save_photo(c, m):
 
 ################## Deleting permanent thumbnail 🗑 ##################
 
-@RenamerNs.on_message(filters.command("deletethumbnail") & filters.incoming & filters.private)
+@Client.on_message(filters.command("deletethumbnail") & filters.incoming & filters.private)
 async def delete_thumbnail(c, m):
     if Config.BANNED_USERS:
         if m.from_user.id in Config.BANNED_USERS:
@@ -67,7 +67,7 @@ async def delete_thumbnail(c, m):
 
 ################## Sending permanent thumbnail 🕶 ##################
 
-@RenamerNs.on_message(filters.command("showthumbnail") & filters.incoming & filters.private)
+@Client.on_message(filters.command("showthumbnail") & filters.incoming & filters.private)
 async def show_thumbnail(c, m):
     if Config.BANNED_USERS:
         if m.from_user.id in Config.BANNED_USERS:
