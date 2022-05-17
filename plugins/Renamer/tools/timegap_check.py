@@ -1,5 +1,5 @@
 import time
-from ..config import Config
+from plugins.config import Config
 from .progress_bar import TimeFormatter
 
 async def timegap_check(m):
