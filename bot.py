@@ -17,7 +17,7 @@ from utils import temp
 from pyrogram import Client
 import os
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+TOKEN = os.environ.get("TOKEN", "")
 
 API_ID = int(os.environ.get("API_ID", ""))
 
@@ -29,7 +29,7 @@ if __name__ == "__main__" :
     )
     app = Client(
         "renamer",
-        bot_token=BOT_TOKEN,
+        bot_token=TOKEN,
         api_id=API_ID,
         api_hash=API_HASH,
         plugins=plugins
