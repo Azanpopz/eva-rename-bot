@@ -11,13 +11,13 @@ from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from database.ia_filterdb import Media
 from database.users_chats_db import db
-from info import SESSION, API_ID, API_HASH, BOT_TOKEN, TOKEN,LOG_STR
+from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR
 from utils import temp
 
 from pyrogram import Client
 import os
 
-TOKEN = os.environ.get("TOKEN", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
 API_ID = int(os.environ.get("API_ID", ""))
 
@@ -29,7 +29,7 @@ if __name__ == "__main__" :
     )
     app = Client(
         "renamer",
-        bot_token=TOKEN,
+        bot_token=BOT_TOKEN,
         api_id=API_ID,
         api_hash=API_HASH,
         plugins=plugins
@@ -44,8 +44,7 @@ class Bot(Client):
             session_name=SESSION,
             api_id=API_ID,
             api_hash=API_HASH,
-            bot_token=BOT_TOKEN,
-            token=TOKEN,
+            bot_token=BOT_TOKEN,            
             workers=50,
             plugins={"root": "plugins"},
             sleep_threshold=5,
