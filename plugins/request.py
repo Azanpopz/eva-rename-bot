@@ -33,67 +33,8 @@ except ModuleNotFoundError:
 from re import match, search
 
 
-"""Connecting to Bot"""
-app = Client(
-    session_name = "RequestTrackerBot",
-    api_id = Config.API_ID,
-    api_hash = Config.API_HASH,
-    bot_token = Config.BOT_TOKEN
-)
 
 
-'''Connecting To Database'''
-mongo_client = MongoClient(Config.DATABASE_URI)
-db_bot = mongo_client['RequestTrackerBot']
-collection_ID = db_bot['channelGroupID']
-
-
-# Regular Expression for #request
-requestRegex = "#[rR][eE][qQ][uU][eE][sS][tT] "
-
-
-"""Handlers"""
-
-# Start & Help Handler
-@Client.on_message(filters.private & filters.command(["start", "help"]))
-async def startHandler(bot:Update, msg:Message):
-    botInfo = await bot.get_me()
-    await msg.reply_text(
-        "<b>Hi, I am Request Tracker Bot🤖.\nIf you hadn't added me in your Group & Channel then ➕add me now.\n\nHow to Use me?</b>\n\t1. Add me to your Group & CHannel.\n\t2. Make me admin in both Channel & Group.\n\t3. Give permission to Post , Edit & Delete Messages.\n\t4. Now send Group ID & Channel ID in this format <code>/add GroupID ChannelID</code>.\nNow Bot is ready to be used.\n\n<b>😊Join @AJPyroVerse & @AJPyroVerseGroup for getting more awesome 🤖bots like this.</b>",
-        parse_mode = "html",
-        reply_markup = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "➕Add me to your Group.",
-                        url = f"https://telegram.me/{botInfo.username}?startgroup=true"
-                    )
-                ]
-            ]
-        )
-    )
-    return
-
-# return group id when bot is added to group
-@Client.on_message(filters.new_chat_members)
-async def chatHandler(bot:Update, msg:Message):
-    if msg.new_chat_members[0].is_self: # If bot is added
-        await msg.reply_text(
-            f"<b>Hey😁, Your Group ID is <code>{msg.chat.id}</code></b>",
-            parse_mode = "html"
-        )
-    return
-
-# return channel id when message/post from channel is forwarded
-@app.on_message(filters.forwarded & filters.private)
-async def forwardedHandler(bot:Update, msg:Message):
-    forwardInfo = msg.forward_from_chat
-    if forwardInfo.type == "channel":   # If message forwarded from channel
-        await msg.reply_text(
-            f"<b>Hey😁, Your Channel ID is <code>{forwardInfo.id}</code>\n\n😊Join @AJPyroVerse & @AJPyroVerseGroup for getting more awesome 🤖bots like this.</b>",
-            parse_mode = "html"
-        )
-    return
 
 # /add handler to add group id & channel id with database
 @Client.on_message(filters.private & filters.command("add"))
