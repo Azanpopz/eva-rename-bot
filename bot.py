@@ -20,7 +20,7 @@ import os
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
-APP_ID = int(os.environ.get("APP_ID", ""))
+API_ID = int(os.environ.get("API_ID", ""))
 
 API_HASH = os.environ.get("API_HASH", "")
 
@@ -30,8 +30,8 @@ if __name__ == "__main__" :
     )
     app = Client(
         "renamer",
-        bot_token=TOKEN,
-        api_id=APP_ID,
+        bot_token=BOT_TOKEN,
+        api_id=API_ID,
         api_hash=API_HASH,
         plugins=plugins
     )
