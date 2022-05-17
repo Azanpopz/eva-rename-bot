@@ -11,7 +11,7 @@ from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from database.ia_filterdb import Media
 from database.users_chats_db import db
-from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR
+from info import SESSION, API_ID, API_HASH, BOT_TOKEN, TOKEN,LOG_STR
 from utils import temp
 
 from pyrogram import Client
@@ -45,6 +45,7 @@ class Bot(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
+            bot_token=TOKEN,
             workers=50,
             plugins={"root": "plugins"},
             sleep_threshold=5,
