@@ -9,7 +9,10 @@ bs4
 imdbpy
 pyrogram
 
+Pillow
 humanize
 hachoir
+pyrogram
+TgCrypto
 pymongo
 dnspython
