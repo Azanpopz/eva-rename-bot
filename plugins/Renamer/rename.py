@@ -4,14 +4,14 @@ logger = logging.getLogger(__name__)
 import os
 import time
 import random
-from ...config import Config
-from plugins.Renamer...tools.text import TEXT
-from ..tools.progress_bar import progress_bar, take_screen_shot
-from ..tools.timegap_check import timegap_check
-from ..tools.thumbnail_fixation import fix_thumb
+from plugins.config import Config
+from plugins.Renamer.tools.text import TEXT
+from plugins.Renamer.tools.progress_bar import progress_bar, take_screen_shot
+from plugins.Renamer.tools.timegap_check import timegap_check
+from plugins.Renamer.tools.thumbnail_fixation import fix_thumb
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from ..database.database import *
+from plugins.Renamer.database.database import *
 from pyrogram import Client as RenamerNs, filters
 from pyrogram.errors import PeerIdInvalid, ChannelInvalid, FloodWait
 from pyrogram.emoji import *
