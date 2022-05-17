@@ -33,7 +33,7 @@ def main():
     startup_msg += "Thanks for deploying our bot. Please give a star to my repo and join @Ns_bot_updates."
     print(startup_msg)
 
-    idle()
+    
 
     Renamer.stop()
     print("Ok bye bye 😢.")
