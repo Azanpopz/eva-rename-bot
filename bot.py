@@ -11,78 +11,16 @@ from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from database.ia_filterdb import Media
 from database.users_chats_db import db
-from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR   
-
-
+from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR
 from utils import temp
 
 
 from pyrogram import Client
 import os
 
-
-from config import *
-
-
-
-#!/usr/bin/env python3
-
-
-"""Importing"""
-# Importing External Packages
-from pyrogram import Client, idle
-
-# Importing Inbuilt Packages
-import logging
-from os import path, makedirs, remove
-
-# Importing Credentials & Required Data
-try:
-    from testexp.config import Con
-except ModuleNotFoundError:
-    from config import Con
-
-
-'''For Displaying Errors&Warnings Better'''
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-# No task on staring bot
-try:
-    remove('task.txt')
-except FileNotFoundError:
-    pass
-
-"""Starting Bot"""
-if __name__ == "__main__" :
-    # Creating download directories, if they does not exists
-    if not path.isdir(Con.DOWNLOAD_LOCATION):
-        makedirs(Con.DOWNLOAD_LOCATION)
-    plugins = dict(
-        root="plugins"
-    )
-    app = Client(
-        "URL_Uploader",
-        bot_token=Con.BOT_TOKEN,
-        api_id=Con.APP_ID,
-        api_hash=Con.API_HASH,
-        plugins=plugins
-    )
-
-
-
-
-
-
-
-
-
-
-
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
-API_ID = int(os.environ.get("API_ID", ""))
+APP_ID = int(os.environ.get("APP_ID", ""))
 
 API_HASH = os.environ.get("API_HASH", "")
 
@@ -92,14 +30,11 @@ if __name__ == "__main__" :
     )
     app = Client(
         "renamer",
-        bot_token=BOT_TOKEN,
-        api_id=API_ID,
+        bot_token=TOKEN,
+        api_id=APP_ID,
         api_hash=API_HASH,
         plugins=plugins
     )
-
-
-
 
 
 
@@ -110,13 +45,13 @@ class Bot(Client):
             session_name=SESSION,
             api_id=API_ID,
             api_hash=API_HASH,
-            bot_token=BOT_TOKEN,            
+            bot_token=BOT_TOKEN,
             workers=50,
             plugins={"root": "plugins"},
             sleep_threshold=5,
             parse_mode="html",
         )
-    
+
     async def start(self):
         b_users, b_chats = await db.get_banned()
         temp.BANNED_USERS = b_users
@@ -136,6 +71,3 @@ class Bot(Client):
         await super().stop()
         logging.info("Bot stopped. Bye.")
 
-
-app = Bot()
-app.run()
