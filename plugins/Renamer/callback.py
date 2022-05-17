@@ -1,7 +1,7 @@
 import logging
 logger = logging.getLogger(__name__)
 
-from .commands import *
+from plugins.Renamer.commands import *
 from plugins.config import Config
 from plugins.Renamer.tools.text import TEXT
 from pyrogram import Client as RenamerNs, filters
