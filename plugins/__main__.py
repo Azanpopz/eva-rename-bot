@@ -10,7 +10,7 @@ logging.getLogger().setLevel(logging.ERROR)
 logging.getLogger().setLevel(logging.WARNING)
 
 import platform
-from .config import Config
+from plugins..config import Config
 from pyrogram import Client, __version__, idle
 from pyromod import listen
 
