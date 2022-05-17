@@ -5,7 +5,7 @@ import os
 import math
 import time
 import asyncio
-from ..config import Config
+from plugins.config import Config
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.emoji import *
 
