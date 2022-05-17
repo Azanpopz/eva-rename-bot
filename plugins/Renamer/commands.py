@@ -3,7 +3,7 @@ logger = logging.getLogger(__name__)
 
 from plugins.config import Config
 from plugins.Renamer.tools.text import TEXT
-from plugins.Renamer.database.database import *
+from plugins.Renamer.database import database
 from pyrogram import Client as RenamerNs, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup 
 from pyrogram.emoji import *
