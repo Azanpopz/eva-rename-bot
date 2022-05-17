@@ -4,8 +4,8 @@ logger = logging.getLogger(__name__)
 import os
 import time
 import random
-from ..config import Config
-from ..tools.text import TEXT
+from ...config import Config
+from plugins.Renamer...tools.text import TEXT
 from ..tools.progress_bar import progress_bar, take_screen_shot
 from ..tools.timegap_check import timegap_check
 from ..tools.thumbnail_fixation import fix_thumb
