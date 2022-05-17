@@ -98,16 +98,31 @@
             "description": "Username of the channel without '@' to send files and redirect users to. Deafults to 0 (no redirect).",
             "value": "oKda",
             "required": false
-        }
-    },
-    "addons": [],
-    "buildpacks": [{
-        "url": "heroku/python"
-    }],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "free"
-        }
+        },
+        "CHUNK_SIZE": {
+      "description": "chunk size that should be used with requests",
+      "value": "128",
+      "required": false
+    
+  },
+  "addons": [
+    {
+    "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
     }
+  ],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
+    
