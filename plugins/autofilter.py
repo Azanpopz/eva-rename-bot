@@ -3,7 +3,7 @@ import re, asyncio, random
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from LuciferMoringstar_Robot.database._utils import get_size, split_list
 from LuciferMoringstar_Robot.database.autofilter_db import get_filter_results, get_poster
-from config import BUTTONS, bot_info, SPELL_MODE, SET_SPEL_M, SUPPORT, BOT_PICS
+from LuciferMoringstar_Robot.config import BUTTONS, bot_info, SPELL_MODE, SET_SPEL_M, SUPPORT, BOT_PICS
 from translation import LuciferMoringstar
 
 
