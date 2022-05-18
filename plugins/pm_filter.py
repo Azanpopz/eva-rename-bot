@@ -203,7 +203,7 @@ async def next_page(bot, query):
 
                 )
               
-            ],
+            ]
                           
 
                 InlineKeyboardButton(
