@@ -201,12 +201,10 @@ async def next_page(bot, query):
 
                     callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}',
 
-                )
-              
-            ]
-        ]
-                          
+                ),
+        btn = [
 
+            [
                 InlineKeyboardButton(
 
                     text=f"🐠{get_size(file.file_size)}🐠",
@@ -216,6 +214,9 @@ async def next_page(bot, query):
                 )
 
             ] 
+
+            for file in files
+
 
     
 
