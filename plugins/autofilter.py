@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from LuciferMoringstar_Robot.database._utils import get_size, split_list
 from LuciferMoringstar_Robot.database.autofilter_db import get_filter_results, get_poster
 from LuciferMoringstar_Robot.config import BUTTONS, bot_info, SPELL_MODE, SET_SPEL_M, SUPPORT, BOT_PICS
-from translation import LuciferMoringstar
+from LuciferMoringstar_Robot.translation import LuciferMoringstar
 
 
 #@LuciferMoringstar_Robot.on_message(Worker.text & Worker.group & Worker.incoming & Worker.chat(AUTH_GROUPS) if AUTH_GROUPS else Worker.text & Worker.group & Worker.incoming)
