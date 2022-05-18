@@ -1,8 +1,8 @@
 import re, asyncio, random
 # from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from LuciferMoringstar_Robot.database._utils import get_size, split_list
-from LuciferMoringstar_Robot.database.autofilter_db import get_filter_results, get_poster
+from LuciferMoringstar_Robot.Database._utils import get_size, split_list
+from LuciferMoringstar_Robot.Database.autofilter_db import get_filter_results, get_poster
 from LuciferMoringstar_Robot.config import BUTTONS, bot_info, SPELL_MODE, SET_SPEL_M, SUPPORT, BOT_PICS
 from LuciferMoringstar_Robot.translation import LuciferMoringstar
 
