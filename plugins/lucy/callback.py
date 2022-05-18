@@ -9,8 +9,8 @@ from LuciferMoringstar_Robot.Database.autofilter_db import get_file_details
 from LuciferMoringstar_Robot.Database._utils import get_size, is_subscribed
 from LuciferMoringstar_Robot.Database._utils import lucifer_temp
 
-from translation import LuciferMoringstar
-from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS, team_name, team_link
+from Lucyfer_translation import my
+from Lucyfer_config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS, team_name, team_link
 
 from LuciferMoringstar_Robot.modules._text_ import module
 
