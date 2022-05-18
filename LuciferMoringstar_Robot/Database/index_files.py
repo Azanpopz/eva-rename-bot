@@ -4,10 +4,10 @@ import logging, asyncio, re
 from pyrogram import Client as luciferMoringstar_robot, filters as filter
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import ChannelInvalid, ChatAdminRequired, UsernameInvalid, UsernameNotModified
-from config import ADMINS, LOG_CHANNEL
-from LuciferMoringstar_Robot.database.autofilter_db import save_file
+from Lucyfer_config import ADMINS, LOG_CHANNEL
+from LuciferMoringstar_Robot.Database.autofilter_db import save_file
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from LuciferMoringstar_Robot.database._utils import lucifer_temp
+from LuciferMoringstar_Robot.Database._utils import lucifer_temp
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
