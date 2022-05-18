@@ -201,7 +201,10 @@ async def next_page(bot, query):
 
                     callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}',
 
-                ),
+                )
+              ]
+            [
+                          
 
                 InlineKeyboardButton(
 
