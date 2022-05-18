@@ -77,7 +77,7 @@ async def pmafoffon(bot, message):
     if cmd == "on":
         if message.chat.id in temp.PMAF_OFF:
             temp.PMAF_OFF.remove(message.chat.id)
-                await message.reply("𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝚃𝙸𝚁𝙽𝙴𝙳 𝙾𝙵𝙵")  
+            await message.reply("𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝚃𝙸𝚁𝙽𝙴𝙳 𝙾𝙵𝙵")  
         else:
             await message.reply("𝙰𝙻𝚁𝙴𝙰𝙳𝚈 𝙾𝙽 𝙸𝙽 𝚃𝙷𝙸𝚂 𝙲𝙷𝙰𝚃..!")                           
     elif cmd == "off":
