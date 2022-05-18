@@ -3,8 +3,8 @@ import re, asyncio, random
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from LuciferMoringstar_Robot.Database._utils import get_size, split_list
 from LuciferMoringstar_Robot.Database.autofilter_db import get_filter_results, get_poster
-from LuciferMoringstar_Robot.config import BUTTONS, bot_info, SPELL_MODE, SET_SPEL_M, SUPPORT, BOT_PICS
-from LuciferMoringstar_Robot.translation import LuciferMoringstar
+from Lucyfer_config import BUTTONS, bot_info, SPELL_MODE, SET_SPEL_M, SUPPORT, BOT_PICS
+from LuciferMoringstar_Robot.Database.translation import LuciferMoringstar
 
 
 #@LuciferMoringstar_Robot.on_message(Worker.text & Worker.group & Worker.incoming & Worker.chat(AUTH_GROUPS) if AUTH_GROUPS else Worker.text & Worker.group & Worker.incoming)
