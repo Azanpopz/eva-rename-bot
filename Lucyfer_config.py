@@ -1,6 +1,6 @@
 import re, os
 from os import environ
-from LuciferMoringstar-Robot.Database.translation import LuciferMoringstar
+from translation import my
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
     if value.lower() in ["true", "yes", "1", "enable", "on"]:
