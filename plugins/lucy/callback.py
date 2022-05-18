@@ -12,7 +12,7 @@ from LuciferMoringstar_Robot.Database._utils import lucifer_temp
 from Lucyfer_translation import my
 from Lucyfer_config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS, team_name, team_link
 
-from LuciferMoringstar_Robot.modules._text_ import module
+from plugins.lucy.text import module
 
 lock = asyncio.Lock()
 
