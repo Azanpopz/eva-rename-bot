@@ -178,7 +178,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f'📝 𝐈𝐍𝐅𝐎', 'infoss')
               ]
             ) 
-            for file in files
+            
         ]
 
     btn.insert(0, 
