@@ -161,68 +161,36 @@ async def next_page(bot, query):
 
 
     if settings['button']:
-
         btn = [
-
             [
-
                 InlineKeyboardButton(
-
-                    text=f"🐠{file.file_name}🐠",
-
-                    callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}',
+                        text=f"🐠 [{get_size(file.file_size)}]🐠{file.file_name}🐠", 
+                        callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}'
                 )
-              ]
-            [
-                          
-                InlineKeyboardButton(
-
-                    text=f"🐠{get_size(file.file_size)}🐠",
-
-                    callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}',
-
-                )
-
-            ]  
-
+            ] 
             for file in files
-
         ]
-
     else:
-
-        btn = [[
-                    
-            InlineKeyboardButton(f"🐠{file.file_name}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}'),
-            InlineKeyboardButton(f"🐠{get_size(file.file_size)}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}')
-        ]]
-
-             
-        for file in files
+        btn = [
+            [
+                InlineKeyboardButton(f'🗃️ 𝐅𝐈𝐋𝐄𝐒: {len(files)}', 'dupe'),
+                
+                InlineKeyboardButton(f'📝 𝐈𝐍𝐅𝐎', 'infoss')
+                ]
+            ) 
+            for file in files
         ]
-
-
 
     btn.insert(0, 
-
         [
-
             InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe')
-
         ]
-
     )
-
     btn.insert(1,
-
         [
-
             InlineKeyboardButton(f'🗃️ 𝐅𝐈𝐋𝐄𝐒: {len(files)}', 'dupe'),
-
             InlineKeyboardButton(f'📝 𝐈𝐍𝐅𝐎', 'infoss')
-
         ]
-
     )
 
     
