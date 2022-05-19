@@ -16,7 +16,7 @@ text
 
 @Client.on_message(filters.service)
 async def service(client, Message):
-    await asyncio.sleep(60)
+    await asyncio.sleep(5)
     await Message.delete()
 
 
