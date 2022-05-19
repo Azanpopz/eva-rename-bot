@@ -4,7 +4,7 @@ import os
 import time
 
 from bot import Bot
-from pyrogram import filters
+from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 from helper.get_messages import get_messages
@@ -16,7 +16,7 @@ if bool(os.environ.get("ENV", False)):
 else:
     from config import Config
 
-@Bot.on_message(filters.group & filters.command('cleanmedia'))
+@Client.on_message(filters.group & filters.command('cleanmedia'))
 async def del_all_command_fn(client: Bot, message: Message):
     await message.delete()
     if message.from_user.id not in Config.AUTH_USERS:
