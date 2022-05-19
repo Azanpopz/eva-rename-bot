@@ -150,10 +150,10 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                await asyncio.sleep(15)
-                await msg1.delete()
-                await msg.delete()
-                del msg1, msg
+              await asyncio.sleep(15)
+              await msg1.delete()
+              await msg.delete()
+              del msg1, msg
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
