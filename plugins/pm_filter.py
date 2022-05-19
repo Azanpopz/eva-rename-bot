@@ -171,17 +171,19 @@ async def next_page(bot, query):
             for file in files
         ]
     else:
-        btn = (
+        btn = [
             [
                 InlineKeyboardButton(f"🙏🏻{file.file_name}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}')
             ],
+              
+
               [
                 InlineKeyboardButton(f"🙏🏻{get_size(file.file_size)}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}')                              
                               
             ] 
             for file in files         
 
-        )         
+        ]                 
                               
 
     btn.insert(0, 
