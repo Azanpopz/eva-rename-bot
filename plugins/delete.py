@@ -35,14 +35,3 @@ async def delete(user, message):
     except Exception as e:
        print(e)
        
-Client.start()
-print("User Started!")
-Bot.start()
-print("Bot Started!")
-
-
-
-Client.stop()
-print("User Stopped!")
-Bot.stop()
-print("Bot Stopped!")
