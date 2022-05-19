@@ -171,13 +171,13 @@ async def next_page(bot, query):
             for file in files
         ]
     else:
-        btn = (
+        btn = [
             [
-                InlineKeyboardButton(f'🗃️ 𝐅𝐈𝐋𝐄𝐒: {len(files)}', 'dupe'),
+                InlineKeyboardButton(f"🐠{get_size(file.file_size)}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}'),
                 
-                InlineKeyboardButton(f'📝 𝐈𝐍𝐅𝐎', 'infoss')
+                InlineKeyboardButton(f"🐠{file.file_name}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}')
               ]
-            ) 
+            ] 
             
         
 
