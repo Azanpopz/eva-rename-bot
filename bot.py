@@ -22,6 +22,7 @@ import os
 
 
 #----------------------------------- https://github.com/m4mallu/DeleteMediaRobot -------------------------------------#
+from bot import Bot
 
 import os
 
@@ -129,4 +130,5 @@ class Bot(Client):
 
 
 
-app.run()
+
+Bot().run()
