@@ -173,16 +173,16 @@ async def next_page(bot, query):
     else:
         buttons = [
             [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/mazhatthullikal'),
-                InlineKeyboardButton('Channel ⭕️', url='https://t.me/mazhatthullikal')
+                InlineKeyboardButton(f"{get_size(file.file_size)}", callback_data=f'files#{file.file_id}'),
+                InlineKeyboardButton(f"{get_size(file.file_size)}", callback_data=f'files#{file.file_id}')
                 ],
             
             [
-                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/mazhatthullikal')
+                InlineKeyboardButton(f"{get_size(file.file_size)}", callback_data=f'files#{file.file_id}')
                 ]
             ]
              
-        for file in files
+    for file in files
         ]                 
                               
 
