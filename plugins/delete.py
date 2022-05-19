@@ -43,7 +43,7 @@ async def delete(user, message):
        if message.from_user.id in ADMINS:
           return
        else:
-          await asyncio.sleep(10000)
+          await asyncio.sleep(TIME)
           await Bot.delete_messages(message.chat.id, message.id)
     except Exception as e:
        print(e)
