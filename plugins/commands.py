@@ -139,23 +139,27 @@ async def start(client, message):
 
               
                 
+            try:
+                await client.send_cached_media(
+                    chat_id=message.from_user.id,
+                    file_id=msg.get("file_id"),
+                    caption=f_caption,
+                    protect_content=msg.get('protect', False),
+                    )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
-                autodelete = await client.send_cached_media(                   
-                    chat_id=PM,
+                sts = await client.send_cached_media(
+                    chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
-                    caption=script.START_TXT.format(message.from_user.mention),
+                    caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                await asyncio.sleep(20)
-                await autodelete.delete()
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
-            await asyncio.sleep(1)
+            await asyncio.sleep(10) 
         await sts.delete()
-        
         return
     elif data.split("-", 1)[0] == "DSTORE":
         sts = await message.reply("Please wait")
