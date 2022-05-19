@@ -139,7 +139,7 @@ async def start(client, message):
             try:
               
                 
-            except FloodWait as e:
+                except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
                 autodelete = await client.send_cached_media(                   
