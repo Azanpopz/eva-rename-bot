@@ -143,7 +143,8 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-
+              await asyncio.sleep(15)
+              await msg.delete()
               msg1 = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
@@ -152,8 +153,8 @@ async def start(client, message):
                     )
               await asyncio.sleep(15)
               await msg1.delete()
-              await msg.delete()
-              del msg1, msg
+              
+              
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
