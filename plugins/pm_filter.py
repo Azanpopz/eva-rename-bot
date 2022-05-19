@@ -98,7 +98,7 @@ E = """https://telegra.ph/file/f24928ca9720ccb21b597.jpg"""
 
 
 
-@Client.on_message((filters.group | filters.private) & filters.text & ~filters.edited & filters.incoming)
+@Client.on_message((filters.private) & filters.text & ~filters.edited & filters.incoming)
 
 async def give_filter(client, message):
 
