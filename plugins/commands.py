@@ -150,7 +150,7 @@ async def start(client, message):
               
               
             
-    elif data.split("-", 1)[0] == "DSTORE":
+   elif data.split("-", 1)[0] == "DSTORE":
         sts = await message.reply("Please wait")
         b_string = data.split("-", 1)[1]
         decoded = (base64.urlsafe_b64decode(b_string + "=" * (-len(b_string) % 4))).decode("ascii")
