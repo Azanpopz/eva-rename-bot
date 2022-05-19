@@ -8,7 +8,6 @@ api_hash: str = "7bcf61fcd32b8652cd5876b02dcf57ae"
 token: str = "5328651309:AAFx1aoxzzEpK4-KxC4Ay03qd4rXDTEgrPM"
 
 
-app = Client('antiservicebot', in_memory=True, api_id=api_id, api_hash=api_hash, bot_token=token)
 
 DONATESTARTTEXT: str = """
 text  
