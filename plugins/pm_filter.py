@@ -175,10 +175,11 @@ async def next_page(bot, query):
             [
                 InlineKeyboardButton('⭕️ Support', url='https://t.me/mazhatthullikal'),
                 InlineKeyboardButton('Channel ⭕️', url='https://t.me/mazhatthullikal')
-            ],
+                ],
             
             [
                 InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/mazhatthullikal')
+                ]
             ]
              
             for file in files
