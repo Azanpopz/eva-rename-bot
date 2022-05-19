@@ -155,12 +155,12 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                    await asyncio.sleep(10)
-                    await k.delete()
+                await asyncio.sleep(10)
+                await k.delete()
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
-            await asyncio.sleep(10) 
+            await asyncio.sleep(1) 
         await k.delete()
         return
     elif data.split("-", 1)[0] == "DSTORE":
