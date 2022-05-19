@@ -171,7 +171,7 @@ async def next_page(bot, query):
             for file in files
         ]
     else:
-        buttons = [
+    buttons = [
             [
                 InlineKeyboardButton('⭕️ Support', url='https://t.me/mazhatthullikal'),
                 InlineKeyboardButton('Channel ⭕️', url='https://t.me/mazhatthullikal')
