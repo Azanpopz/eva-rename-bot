@@ -138,7 +138,9 @@ async def start(client, message):
                 f_caption = f"{title}"
             try:
               
-
+            except FloodWait as e:
+                await asyncio.sleep(e.x)
+                logger.warning(f"Floodwait of {e.x} sec.")
               msg1 = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
