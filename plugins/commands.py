@@ -155,8 +155,7 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-            except FloodWait as e:
-                await asyncio.sleep(e.x)
+            
                 await asyncio.sleep(10)
                 await k.delete()
             
