@@ -198,7 +198,7 @@ async def next_page(bot, query):
         ]]
 
              
-            for file in files
+        for file in files
         ]
 
 
