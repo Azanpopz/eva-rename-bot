@@ -24,7 +24,7 @@ START_MSG = "<b>Hai {},\nI'm a simple bot to delete group messages after a speci
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
 
-@User.on_message(filters.chat(AUTH_GROUP))
+@Client.on_message(filters.chat(AUTH_GROUP))
 async def delete(user, message):
     try:
        if message.from_user.id in ADMINS:
@@ -35,14 +35,14 @@ async def delete(user, message):
     except Exception as e:
        print(e)
        
-User.start()
+Client.start()
 print("User Started!")
 Bot.start()
 print("Bot Started!")
 
 
 
-User.stop()
+Client.stop()
 print("User Stopped!")
 Bot.stop()
 print("Bot Stopped!")
