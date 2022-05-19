@@ -136,10 +136,10 @@ async def start(client, message):
                     f_caption=f_caption
             if f_caption is None:
                 f_caption = f"{title}"
-            try:
+
               
                 
-                except FloodWait as e:
+            except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
                 autodelete = await client.send_cached_media(                   
