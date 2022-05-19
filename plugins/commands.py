@@ -140,7 +140,7 @@ async def start(client, message):
               
                 
             try:
-                k = await client.send_cached_media(
+                s = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
@@ -157,7 +157,7 @@ async def start(client, message):
                     )
             
                 await asyncio.sleep(10)
-                await k.delete()
+                await s.delete()
             
                 continue
             await asyncio.sleep(1) 
