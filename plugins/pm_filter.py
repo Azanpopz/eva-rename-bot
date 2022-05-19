@@ -173,9 +173,9 @@ async def next_page(bot, query):
     else:
         btn = [
             [
-                InlineKeyboardButton(f"🐠{get_size(file.file_size)}🐠", callback_data='help'),
+                InlineKeyboardButton("🐠🐠", callback_data='help'),
                 
-                InlineKeyboardButton(f"🐠{file.file_name}🐠", callback_data='help')
+                InlineKeyboardButton("🐠🐠", callback_data='help')
               ]
             ] 
             
