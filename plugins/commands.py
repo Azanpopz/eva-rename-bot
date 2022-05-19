@@ -138,9 +138,7 @@ async def start(client, message):
                 f_caption = f"{title}"
             try:
               
-                except FloodWait as e:
-                await asyncio.sleep(e.x)
-                logger.warning(f"Floodwait of {e.x} sec.")
+                
               msg1 = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
@@ -151,11 +149,7 @@ async def start(client, message):
               await msg1.delete()
               
               
-            except Exception as e:
-                logger.warning(e, exc_info=True)
-                continue
             
-        return
     elif data.split("-", 1)[0] == "DSTORE":
         sts = await message.reply("Please wait")
         b_string = data.split("-", 1)[1]
