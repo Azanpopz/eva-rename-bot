@@ -179,7 +179,7 @@ async def next_page(bot, query):
               ]
             ) 
             
-        ]
+        
 
     btn.insert(0, 
         [
