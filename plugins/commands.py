@@ -137,14 +137,14 @@ async def start(client, message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
-                await client.send_cached_media(
+              msg = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
             except FloodWait as e:
-                await asyncio.sleep(e.x)
+         msg1 = await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
                 await client.send_cached_media(
                     chat_id=message.from_user.id,
@@ -152,6 +152,10 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
+                await asyncio.sleep(15)
+                await msg1.delete()
+                await msg.delete()
+                del msg1, msg
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
