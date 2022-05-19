@@ -173,7 +173,7 @@ async def next_page(bot, query):
     else:
         btn = [
             [
-                InlineKeyboardButton(f"🙏🏻{file.file_name}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}')
+                InlineKeyboardButton(f"🙏🏻{file.file_name}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}'),
             ]
               [
                 
