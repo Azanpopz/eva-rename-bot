@@ -171,16 +171,15 @@ async def next_page(bot, query):
             for file in files
         ]
     else:
-        btn = [
+        buttons = [
             [
-                InlineKeyboardButton(f"🙏🏻{file.file_name}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}')
+                InlineKeyboardButton('⭕️ Support', url='https://t.me/mazhatthullikal'),
+                InlineKeyboardButton('Channel ⭕️', url='https://t.me/mazhatthullikal')
             ],
-              
-
-              [
-                InlineKeyboardButton(f"🙏🏻{get_size(file.file_size)}🐠", callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}')                              
-                              
-            ] 
+            [
+                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/mazhatthullikal')
+            ]
+            ]
             for file in files         
 
         ]                 
@@ -255,6 +254,7 @@ async def next_page(bot, query):
         await query.edit_message_reply_markup(
 
             reply_markup=InlineKeyboardMarkup(btn)
+            reply_markup=InlineKeyboardMarkup(buttons)
 
         )
 
