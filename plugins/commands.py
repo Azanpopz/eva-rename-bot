@@ -159,8 +159,7 @@ async def start(client, message):
                 await asyncio.sleep(e.x)
                 await asyncio.sleep(10)
                 await k.delete()
-            except Exception as e:
-                logger.warning(e, exc_info=True)
+            
                 continue
             await asyncio.sleep(1) 
         await k.delete()
