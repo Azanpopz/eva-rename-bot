@@ -295,3 +295,11 @@ Name - {}
  
 
         
+    CAPTION_TEXT = """𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 ➧ 
+━═━═━═━═━═━═━═━═
+⟱⟱⟱⟱⟱⟱⟱ 𝕁𝕠𝕚𝕟 ⟱⟱⟱⟱⟱⟱⟱
+━═━ @nasrani_update ━═━"""
+
+    USER_DETAILS = "<b>PM FROM:</b>\nName: {} {}\nId: {}\nUname: @{}\nScam: {}\nRestricted: {}\nStatus: {}\nDc Id: {}"
+    PM_TXT_ATT = "<b>Message from:</b> {}\n<b>Name:</b> {}\n\n{}"
+    PM_MED_ATT = "<b>Message from:</b> {} \n<b>Name:</b> {}"
