@@ -236,7 +236,7 @@ async def next_page(bot, query):
 
 
 
-    if 0 < offset <= 10:
+    if 0 < offset <= 5:
 
         off_set = 0
 
@@ -246,7 +246,7 @@ async def next_page(bot, query):
 
     else:
 
-        off_set = offset - 10
+        off_set = offset - 5
 
     if n_offset == 0:
 
