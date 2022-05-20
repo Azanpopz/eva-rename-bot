@@ -20,3 +20,4 @@ from config import Config
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+Bot().run()
