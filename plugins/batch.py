@@ -2,7 +2,7 @@ import base64
 import logging
 import asyncio
 
-
+from boot import Bot
 from utils import temp
 from struct import pack
 from info import ADMINS
